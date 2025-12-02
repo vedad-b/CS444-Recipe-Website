@@ -2,7 +2,7 @@
 const recipes = [
   {
     title: "Fluffy Pancakes",
-    image: "hussein-lazim-sVxDMXluCjQ-unsplash.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/hussein-lazim-sVxDMXluCjQ-unsplash.jpg",
     mealType: "Breakfast",
     prepTime: "10 mins",
     cookTime: "20 mins",
@@ -29,7 +29,7 @@ const recipes = [
   },
   {
     title: "Avocado Toast",
-    image: "https://images.unsplash.com/photo-1708725741805-390cb4f3319f?w=800&q=80",
+    image: "vedad-b/CS444-Recipe-Website/pictures/avocado.jpg",
     mealType: "Breakfast",
     prepTime: "5 mins",
     cookTime: "10 mins",
@@ -53,7 +53,7 @@ const recipes = [
   },
   {
     title: "Slow Cooker Beef Bourguignon",
-    image: "beefstew.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/beefstew.jpg",
     mealType: "Dinner",
     prepTime: "30 mins",
     cookTime: "9 hours",
@@ -82,7 +82,7 @@ const recipes = [
   },
   {
     title: "Vegetarian Lasagna",
-    image: "Vegetable_lasagna.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/Vegetable_lasagna.jpg",
     mealType: "Dinner",
     prepTime: "20 mins",
     cookTime: "1 hour",
@@ -110,7 +110,7 @@ const recipes = [
   },
   {
     title: "Caprese Salad",
-    image: "caprese-salad.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/caprese-salad.jpg",
     mealType: "Lunch",
     prepTime: "5 mins",
     cookTime: "10 mins",
@@ -137,7 +137,7 @@ const recipes = [
   },
   {
     title: "Beef Wellington",
-    image: "Beef-wellington.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/Beef-wellington.jpg",
     mealType: "Dinner",
     prepTime: "45 mins",
     cookTime: "2 hours",
@@ -164,7 +164,7 @@ const recipes = [
   },
   {
     title: "Thai Noodle Salad",
-    image: "thai-chicken.jpg",
+    image: "vedad-b/CS444-Recipe-Website/pictures/thai-chicken.jpg",
     mealType: "Lunch",
     prepTime: "15 mins",
     cookTime: "25 mins",
@@ -194,7 +194,155 @@ const recipes = [
       "Top with peanuts and cilantro before serving."
     ],
     credit: "Taste of Home"
-  }
+  },
+  {
+  title: "Matzo Ball Soup",
+  image: "vedad-b/CS444-Recipe-Website/pictures/matzo-ball.jpg",
+  mealType: "Dinner",
+  prepTime: "20 mins",
+  cookTime: "1 hour",
+  servings: 4,
+  kcal: 350,
+  difficulty: "Easy",
+  dietary: ["Kosher","Chicken"],
+  description: "A comforting Jewish soup with fluffy matzo balls simmered in chicken broth.",
+  ingredients: [
+    "4 eggs",
+    "1 cup matzo meal",
+    "1/4 cup schmaltz (or oil)",
+    "Salt and pepper",
+    "8 cups chicken broth",
+    "2 carrots, sliced",
+    "2 celery stalks, sliced"
+  ],
+  instructions: [
+    "Mix eggs, matzo meal, fat, and seasoning to form dough.",
+    "Chill, then shape into balls.",
+    "Simmer balls in chicken broth with carrots and celery until cooked through."
+  ],
+  credit: "Kosher.com"
+},
+{
+  title: "Chicken Akni",
+  image: "vedad-b/CS444-Recipe-Website/pictures/anki-rice.jpg",
+  mealType: "Dinner",
+  prepTime: "20 mins",
+  cookTime: "1 hour",
+  servings: 6,
+  kcal: 500,
+  difficulty: "Medium",
+  dietary: ["Halal", "Chicken"],
+  description: "A fragrant South African rice and chicken dish cooked with spices and saffron.",
+  ingredients: [
+    "2 cups basmati rice",
+    "1 kg chicken pieces",
+    "2 onions, sliced",
+    "2 tomatoes, chopped",
+    "1 cup yogurt",
+    "2 tbsp biryani masala",
+    "1 tsp saffron threads",
+    "Fresh cilantro and mint"
+  ],
+  instructions: [
+    "Marinate chicken with yogurt and spices.",
+    "Cook onions and tomatoes, then add chicken.",
+    "Layer rice and chicken, add saffron milk.",
+    "Steam until rice is fluffy and chicken is tender."
+  ],
+  credit: "Halaal Recipes Community"
+},
+  {
+    id: "pumpkin-pie",
+    title: "Classic Pumpkin Pie",
+    description: "A creamy, spiced pumpkin pie baked in a flaky crust — perfect for autumn gatherings.",
+    image: "vedad-b/CS444-Recipe-Website/pictures/pumpkin-pie.jpg", 
+    prepTime: "20 mins",
+    cookTime: "55 mins",
+    servings: "8",
+    difficulty: "Medium",
+    dietary: ["Dessert"],
+    ingredients: [
+      "1 (15 oz) can pumpkin puree",
+      "1 (14 oz) can sweetened condensed milk",
+      "2 large eggs",
+      "1 tsp ground cinnamon",
+      "1/2 tsp ground ginger",
+      "1/2 tsp ground nutmeg",
+      "1/2 tsp salt",
+      "1 (9-inch) unbaked pie crust"
+    ],
+    instructions: [
+      "Preheat oven to 425°F (220°C).",
+      "In a large bowl, whisk together pumpkin puree, condensed milk, eggs, spices, and salt until smooth.",
+      "Pour filling into the pie crust.",
+      "Bake for 15 minutes, then reduce oven temperature to 350°F (175°C).",
+      "Continue baking for 35–40 minutes, or until a knife inserted near the center comes out clean.",
+      "Cool on a wire rack for 2 hours. Refrigerate leftovers."
+    ],
+    credit: "JoCooks"
+  },
+  {
+  id: "brownies",
+  title: "Fudgy Brownies",
+  description: "Rich, chocolatey brownies with a crackly top and gooey center.",
+  image: "vedad-b/CS444-Recipe-Website/pictures/brownies.jpg",
+  prepTime: "15 mins",
+  cookTime: "30 mins",
+  servings: "12",
+  difficulty: "Easy",
+  dietary: ["Dessert"],
+  ingredients: [
+    "1/2 cup unsalted butter, melted",
+    "1 cup granulated sugar",
+    "2 large eggs",
+    "1/3 cup unsweetened cocoa powder",
+    "1/2 cup all-purpose flour",
+    "1/4 tsp salt",
+    "1/4 tsp baking powder"
+  ],
+  instructions: [
+    "Preheat oven to 350°F (175°C). Grease a 9x9-inch pan.",
+    "Mix melted butter, sugar, and eggs until smooth.",
+    "Stir in cocoa, flour, salt, and baking powder.",
+    "Spread batter into prepared pan.",
+    "Bake 25–30 minutes until edges are set and center is slightly soft.",
+    "Cool before cutting into squares."
+  ],
+  credit:"Allrecipes" 
+},
+{
+  id: "chocolate-chip-cookies",
+  title: "Chocolate Chip Cookies",
+  description: "Classic chewy cookies loaded with melty chocolate chips.",
+  image: "vedad-b/CS444-Recipe-Website/pictures/chocolate-chip.jpg",
+  prepTime: "20 mins",
+  cookTime: "10 mins",
+  servings: "24",
+  difficulty: "Easy",
+  dietary: ["Dessert"],
+  ingredients: [
+    "1 cup unsalted butter, softened",
+    "1 cup white sugar",
+    "1 cup packed brown sugar",
+    "2 large eggs",
+    "2 tsp vanilla extract",
+    "3 cups all-purpose flour",
+    "1 tsp baking soda",
+    "2 tsp hot water",
+    "1/2 tsp salt",
+    "2 cups semisweet chocolate chips"
+  ],
+  instructions: [
+    "Preheat oven to 350°F (175°C).",
+    "Cream together butter and sugars until smooth.",
+    "Beat in eggs one at a time, then stir in vanilla.",
+    "Dissolve baking soda in hot water and add to batter with salt.",
+    "Stir in flour and chocolate chips.",
+    "Drop spoonfuls onto ungreased baking sheets.",
+    "Bake 8–10 minutes until edges are golden."
+  ],
+  credit: "Allrecipes"
+}
 ];
 
 
@@ -236,18 +384,18 @@ function createRecipeCard(recipe, index) {
       <div class="recipe-content">
         <h3 class="recipe-title">${recipe.title}</h3>
         <p class="description">${recipe.description || ''}</p>
-        <div class="diet-tags">
-          ${dietaryHtml}
-        </div>
+        <div class="diet-tags">${dietaryHtml}</div>
         <div class="info-bar">
           <span class="info-item"><i class="fa-regular fa-clock"></i> ${recipe.cookTime || '—'}</span>
           <span class="info-item"><i class="fa-solid fa-utensils"></i> ${recipe.servings || '—'} servings</span>
           <span class="info-item">${getDifficultyStars(recipe.difficulty)} ${recipe.difficulty || ''}</span>
         </div>
+        ${recipe.credit ? `<p class="credit">Source: ${recipe.credit}</p>` : ''}
       </div>
     </div>
   `;
 }
+
 
 // renderGrid uses the module-level gridRef by default
 function renderGrid(list, container = gridRef) {
@@ -285,7 +433,7 @@ function toggleFavorite(event, index) {
 }
 
 // ================== Filters ==================
-const mealTypes = ["All","Breakfast","Lunch","Dinner"];
+const mealTypes = ["All","Breakfast","Lunch","Dinner", "Dessert"];
 const proteinTags = ["Chicken", "Beef", "Pork", "Fish", "Shellfish"];
 const diets = [
   "Gluten-Free",
@@ -456,7 +604,6 @@ function wireFilterControls() {
     });
   }
 
-  // If you still have a checkbox fallback in markup, handle it too
   if (matchAllCheckbox) {
     matchAllCheckbox.addEventListener('change', () => {
       // keep toggle in sync if both exist
@@ -634,9 +781,8 @@ if (ingEl) {
     }
   }
 
-  
 
-  // Favorite button in modal (unchanged logic)
+  // Favorite button in modal 
   const modalFavBtn = document.getElementById("modalFavoriteBtn");
     const printBtn = document.getElementById("modalPrintBtn");
   const isFavorite = Array.isArray(favorites) && favorites.includes(recipe.title);
@@ -909,7 +1055,7 @@ function showSuggestions(query, containerId, limit = 8) {
 
     input.value = title;
 
-    // If we have a valid index, open the recipe modal directly
+    // have a valid index, open the recipe modal directly
     if (index !== null && index !== "-1") {
       showRecipeDetail(Number(index));
     } else {
@@ -1039,7 +1185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 });
 
-// Back-to-top: create + wire (paste inside DOMContentLoaded)
+// Back-to-top
 (function setupBackToTop() {
   let btn = document.querySelector('.back-to-top');
   if (!btn) {
@@ -1048,8 +1194,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.type = 'button';
     btn.setAttribute('aria-label', 'Back to top');
     btn.innerHTML = '<span class="icon">↑</span>';
-    // optional inline styles if your CSS is missing
-    // btn.style.position = 'fixed'; btn.style.right = '1rem'; btn.style.bottom = '1.25rem';
     document.body.appendChild(btn);
   }
 

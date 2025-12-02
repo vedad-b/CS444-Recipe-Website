@@ -4,11 +4,10 @@
   --muted: #f3f4f6;
   --muted-2: #e5e7eb;
   --accent: #0a7db9;
-  --accent-2: #2563eb;
-  --success: #10b981;
-  --danger: #dc2626;
+  --accent-2: #1557AC;
+  --success: #A2390B;
   --text: #1f2937;
-  --muted-text: #6b7280;
+  --muted-text: #23252A;
   --card-border: #e5e7eb;
   --shadow: 0 2px 6px rgba(0,0,0,0.05);
   --shadow-lg: 0 6px 20px rgba(0,0,0,0.08);
@@ -21,9 +20,10 @@
   --chip-bg: #e5e7eb;
   --chip-border: #d1d5db;
   --chip-text: var(--text, #111);
-  --chip-accent: #0b7a07; /* hover/active background */
-  --chip-accent-strong: rgba(11,122,7,0.18); /* border / shadow tint */
+  --chip-accent: #096006; 
+  --chip-accent-strong: rgba(11,122,7,0.18); 
   --chip-focus-ring: rgba(11,122,7,0.12);
+  --hover-clr: #D9D9D9;
 }
 
 /* Reset / base */
@@ -57,7 +57,7 @@ body {
 
 .navbar .logo a:hover {
 outline: 3px solid rgba(234, 90, 12, 0.469); 
-color: #e05a07;
+color: #1451a3;
 }
 
 /* Desktop nav links */
@@ -96,12 +96,12 @@ color: #e05a07;
   flex: 0 1 auto;
 }
 
-/* Input base (single authoritative rule) */
+/* Input base */
 .navbar .container-input .input {
   width: 220px;
   padding: 10px 12px 10px 40px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--card-border);
+  border: 1px solid #000;
   background: var(--bg);
   transition: width .22s cubic-bezier(.2,.9,.2,1), opacity .18s ease, box-shadow .18s ease;
   outline: none;
@@ -117,9 +117,6 @@ color: #e05a07;
   pointer-events: none;
 }
 
-
-
-/* === Search / Suggestions === */
 .hero-search { 
   position:relative; 
   min-width:0; 
@@ -134,12 +131,12 @@ color: #e05a07;
   border: none;
   border-radius: var(--radius-pill);
   background: var(--accent-2);
-  color: #fff;
+  color: #F0F0F0;
   cursor: pointer;
   transition: background 0.25s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
 .navbar .container-input button[type="submit"]:hover {
-  background: linear-gradient(to right, #d38f11, #0095b6);
+  background: linear-gradient(to right, #4bbe79, #01642a);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
@@ -148,13 +145,19 @@ color: #e05a07;
   box-shadow: 0 0 0 3px rgba(37,99,235,0.25);
 }
 
+.navbar .container-input:focus-within {
+  box-shadow: 0 0 0 3px rgba(3, 76, 235, 0.863); 
+  transform: translateY(-1px);
+  border-radius: var(--radius-pill);
+}
+
 .hero-search {
   position: relative;
   flex: 1;
   max-width: 420px; /* slightly wider for tablets */
   display: flex;
   gap: 0.5rem;
-  border: 1px solid grey;
+  border: 1px solid black;
   box-shadow: var(--shadow);
   border-radius: var(--radius-pill);
   padding: 0.4rem;
@@ -163,11 +166,11 @@ color: #e05a07;
 }
 
 .hero-search:focus-within {
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.25); /* blue focus ring */
+  box-shadow: 0 0 0 3px rgba(60, 61, 64, 0.863); 
   transform: translateY(-1px);
 }
 
-/* Input */
+/* User Hero-Search Input */
 .hero-search input {
   flex: 1;
   padding: 0.6rem 1rem;
@@ -192,19 +195,19 @@ color: #e05a07;
   border: none;
   border-radius: var(--radius-pill);
   background: var(--accent-2);
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
   line-height: 1.2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem; /* space if you add an icon */
+  gap: 0.4rem; 
   transition: background 0.25s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 /* Hover feedback */
 .hero-search button:hover {
-  background: linear-gradient(to right, #d38f11, #0095b6);
+  background: linear-gradient(90deg, #2f7e50, #1f5d38);
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
@@ -212,7 +215,7 @@ color: #e05a07;
 /* Active (pressed) state */
 .hero-search button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.08);
 }
 
 /* Focus-visible for accessibility */
@@ -229,7 +232,7 @@ color: #e05a07;
   box-shadow: none;
 }
 
-
+/*==== Search Form Hero =====*/
 .suggestions {
   position:absolute;
   top:calc(100% + 6px);
@@ -252,7 +255,6 @@ color: #e05a07;
   display: block;
 }
 
-/* ensure items don't force width growth */
 .suggestions .suggestion-item {
   padding: 0.5rem 0.75rem;
   white-space: nowrap;
@@ -268,7 +270,7 @@ color: #e05a07;
 
 /* === Hero Section ===*/
 .hero {
-  background-image: url('food2.jpg');
+  background-image: url('vedad-b/CS444-Recipe-Website/pictures/food2.jpg');
   position:relative;
   height:400px;
   background-size:cover;
@@ -313,18 +315,19 @@ color: #e05a07;
   font-weight:600;
   border-radius:var(--radius-pill);
   border:none;
-  background:var(--success);
+  background:#c76502;
   color:#fff;
   cursor:pointer;
   position:relative;
   overflow:hidden;
   text-align:center;
+  color:var(--bg);
 }
 #surprise-btn::before {
   content:"";
   position:absolute; top:0; left:-10%;
   width:120%; height:130%;
-  background:linear-gradient(to right,#d38f11,#0095b6);
+  background:linear-gradient(to right,#075F42, #057b17);
   transform:skew(30deg) translateX(-100%);
   transition:transform .4s cubic-bezier(.3,1,.8,1);
   z-index:0;
@@ -400,7 +403,6 @@ color: #e05a07;
   box-shadow: 0 6px 18px rgba(11,122,7,0.08);
 }
 
-/* hide legacy count spans if present */
 .chip .count { display:none !important; }
 
 /* Focus for accessibility */
@@ -452,19 +454,27 @@ color: #e05a07;
 
 /* Clear button */
 .btn {
-  padding:.45rem .75rem;
-  border-radius:8px;
-  background:var(--muted-2);
-  border:none;
-  cursor:pointer;
-  font-weight:700;
+  padding: .45rem .75rem;
+  border-radius: 8px;
+  background: var(--muted-2);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--accent-2);   
+  color: #fff;                  
+  outline: none;                
 }
 
 /* Active filters / results */
 .results-count { 
   margin-top:.75rem;
  font-weight:700; 
- color:#374151; 
+ color:#292f3a; 
 }
 
 
@@ -532,7 +542,6 @@ color: #e05a07;
   font-size: 0.82rem;
   color: var(--muted-text);
 }
-
 
 /* =========================
    Recipe grid / cards
@@ -641,11 +650,11 @@ color: #e05a07;
   color: var(--text);
 }
 
-/* Grid area for listing recipe ingredients in modal layouts */
+/* Grid area: listing recipe ingredients - modal layouts */
 .ingredients {
   grid-area: ingredients;
 }
-/* Instructions section: used for modal grid area */
+/* Instructions section: modal grid area */
 .instructions {
   grid-area: instructions;
 }
@@ -747,7 +756,7 @@ color: #e05a07;
 }
 
 .modal-print-btn:hover {
-  background: linear-gradient(to right, #d38f11, #0095b6);
+  background: linear-gradient(to right, #075F42, #057b17);
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
@@ -764,6 +773,8 @@ color: #e05a07;
     border-left: 1px solid var(--card-border);
     padding-left: 1rem;
   }
+
+.navbar .hamburger{display:none;}
 }
 
 
@@ -848,7 +859,7 @@ color: #e05a07;
   cursor: pointer;
 }
 
-/* Card favorite button (small circular heart in card corner) */
+/* Card favorite button */
 .card-favorite-btn {
   background: rgba(255,255,255,0.95);
   border-radius: 50%;
@@ -903,9 +914,9 @@ color: #e05a07;
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0.6rem 0.75rem 0.6rem 48px; /* reserve space for checkbox */
+  padding: 0.6rem 0.75rem 0.6rem 48px; 
   border-radius: 10px;
-  background: #fff;
+  background: #f7f6f6;
   border: 1px solid rgba(0,0,0,0.04);
   cursor: pointer;
   width: 100%;
@@ -928,8 +939,8 @@ color: #e05a07;
 
 .ingredient-step[aria-pressed="true"] .checkbox,
 .ingredient-item.collected .ingredient-step .checkbox {
-  background: #10b981;
-  border-color: #10b981;
+  background: var(--chip-accent);
+  border-color: #074f37;
 }
 
 .ingredient-step[aria-pressed="true"]::after,
@@ -953,11 +964,15 @@ color: #e05a07;
   color: #888;
 }
 
+.ingredient-step:hover {
+  background: var(--hover-clr);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
 
 /* =========================
    Instruction checklist styles
    ========================= */
-
 .instruction-list {
   list-style: none;
   padding: 0;
@@ -973,7 +988,7 @@ color: #e05a07;
   align-items: center;
   padding: 0.6rem 0.75rem 0.6rem 48px; /* reserve space for checkbox */
   border-radius: 10px;
-  background: #fff;
+  background: #f7f6f6;
   border: 1px solid rgba(0,0,0,0.06);
   cursor: pointer;
   width: 100%;
@@ -983,7 +998,7 @@ color: #e05a07;
 }
 
 .instruction-step:hover {
-  background: #f9fafb;
+  background: var(--hover-clr);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
@@ -1002,8 +1017,8 @@ color: #e05a07;
 }
 
 .instruction-step.completed .checkbox {
-  background: #c97603;
-  border-color: #c97603;
+  background: var(--chip-accent);
+  border-color: var(--chip-accent);
 }
 
 .instruction-step.completed::after {
@@ -1099,11 +1114,26 @@ color: #e05a07;
    Responsive Navbar
    ------------------------- */
 
-/* Base: hide desktop nav on small screens and show hamburger */
-@media (max-width: 720px) {
+   @media (max-width: 720px) {
   .nav-desktop {
-    display: none; /* hide full nav links */
+    display: none; 
   }
+
+  .navbar .hamburger {display: inline-flex;}
+ .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .hero-search {
+    width: 100%;
+  }
+  .hero-search button {
+    width: 100%; 
+  }
+  .hero-actions{flex-direction: column; align-items:stretch;}
+  #surprise-btn{order: -1; width: 100%;}
+}
 
   /* Responsive tweak: stack below input on small screens */
 @media (max-width: 480px) {
@@ -1117,19 +1147,19 @@ color: #e05a07;
     top: calc(100% + 6px);
     left: 0;
     right: 0;
-    width: 100%;              /* full width of parent */
-    max-width: 100vw;         /* ensure it doesn’t cut off */
-    border-radius: 0;         /* optional: flush edges */
+    width: 100%;              
+    max-width: 100vw;         
+    border-radius: 0;         
     box-shadow: var(--shadow-lg);
-    overflow-x: auto;         /* allow horizontal scroll if needed */
-    white-space: normal;      /* wrap long names instead of cutting */
+    overflow-x: auto;         
+    white-space: normal;      
   }
 
   .suggestions .suggestion-item {
     padding: 0.75rem 1rem;
     font-size: 1rem;
-    white-space: normal;      /* allow text to wrap */
-    text-overflow: clip;      /* don’t truncate */
+    white-space: normal;      
+    text-overflow: clip;      
   }
 }
 
@@ -1179,7 +1209,7 @@ color: #e05a07;
 .hamburger-inner::before { content: ""; top: -6px; }
 .hamburger-inner::after  { content: ""; top: 6px; }
 
-/* Open state turns into an X */
+/* Open state into an X */
 .hamburger.open .hamburger-inner {
   transform: rotate(45deg);
 }
@@ -1283,6 +1313,6 @@ color: #e05a07;
     background: var(--muted-2);
     outline: none;
   }
-}
+
 
 
