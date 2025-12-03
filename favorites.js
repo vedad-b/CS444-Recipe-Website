@@ -191,12 +191,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to update active navigation state
     const updateActiveNav = (mealType) => {
         // Update meal filter navigation
-        mealFilterNav.querySelectorAll('a').forEach(link => {
-            link.classList.remove('nav-active');
-            if (link.textContent === mealType) {
-                link.classList.add('nav-active');
-            }
-        });
+        if (mealFilterNav) {
+            mealFilterNav.querySelectorAll('a').forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.textContent === mealType) {
+                    link.classList.add('nav-active');
+                }
+            });
+        }
+        
         // Update main navigation if needed
         navLinks.forEach(link => link.classList.remove('nav-active'));
     };
