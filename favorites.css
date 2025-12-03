@@ -235,6 +235,7 @@ body {
         flex-wrap: wrap;
         gap: 15px;
         justify-content: center;
+        font-size: 0.9rem; /* Slightly smaller font for mobile */
     }
     
     .container-input {
@@ -263,8 +264,12 @@ body {
     }
     
     .main-nav-filters {
-        font-size: 0.9rem;
-        gap: 10px;
+        font-size: 0.85rem;
+        gap: 8px; /* Tighter gap on very small screens */
+    }
+    
+    .main-nav-filters a {
+        padding: 4px 8px; /* Smaller padding on very small screens */
     }
     
     .recipe-grid {
