@@ -1,14 +1,26 @@
 // Initialize when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Recipe data array - contains all available recipes
+    // Recipe data array - ALL recipes from script.js with correct image paths
     const ALL_RECIPES = [
+        // Breakfast
         { name: "Fluffy Pancakes", image: "pictures/hussein-lazim-sVxDMXluCjQ-unsplash.jpg", id: "Fluffy_Pancakes", mealType: "Breakfast" },
-        { name: "Avocado Toast", image: "pictures/caprese-salad.jpg", id: "Avocado_Toast", mealType: "Breakfast" },
+        { name: "Avocado Toast", image: "pictures/avocado.jpg", id: "Avocado_Toast", mealType: "Breakfast" },
+        
+        // Lunch
         { name: "Caprese Salad", image: "pictures/caprese-salad.jpg", id: "Caprese_Salad", mealType: "Lunch" },
         { name: "Thai Noodle Salad", image: "pictures/thai-chicken.jpg", id: "Thai_Noodle_Salad", mealType: "Lunch" },
+        
+        // Dinner
         { name: "Slow Cooker Beef Bourguignon", image: "pictures/beefstew.jpg", id: "Slow_Cooker_Beef_Bourguignon", mealType: "Dinner" },
         { name: "Vegetarian Lasagna", image: "pictures/Vegetable_lasagna.jpg", id: "Vegetarian_Lasagna", mealType: "Dinner" },
-        { name: "Beef Wellington", image: "pictures/Beef-wellington.jpg", id: "Beef_Wellington", mealType: "Dinner" }
+        { name: "Beef Wellington", image: "pictures/Beef-wellington.jpg", id: "Beef_Wellington", mealType: "Dinner" },
+        { name: "Matzo Ball Soup", image: "pictures/matzo-ball.jpg", id: "Matzo_Ball_Soup", mealType: "Dinner" },
+        { name: "Chicken Akni", image: "pictures/anki-rice.jpg", id: "Chicken_Akni", mealType: "Dinner" },
+        
+        // Dessert
+        { name: "Classic Pumpkin Pie", image: "pictures/pumpkin-pie.jpg", id: "Classic_Pumpkin_Pie", mealType: "Dessert" },
+        { name: "Fudgy Brownies", image: "pictures/brownies.jpg", id: "Fudgy_Brownies", mealType: "Dessert" },
+        { name: "Chocolate Chip Cookies", image: "pictures/chocolate-chip.jpg", id: "Chocolate_Chip_Cookies", mealType: "Dessert" }
     ];
 
     // Current state variables
@@ -31,18 +43,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to create HTML for a recipe card
     const createRecipeCard = (recipe) => {
-        const recipeUrl = `recipes.html?id=${recipe.id}`; 
+        // Find this recipe in the main recipes array
+        let recipeIndex = -1;
         
-        return `
-            <a href="${recipeUrl}" class="recipe-card-link">
+        // Look for the recipe in the global recipes array (from script.js)
+        if (typeof recipes !== 'undefined') {
+            recipeIndex = recipes.findIndex(r => r.title === recipe.name);
+        }
+        
+        // If found, make it clickable
+        if (recipeIndex !== -1) {
+            return `
+                <div class="recipe-card clickable-recipe" data-index="${recipeIndex}">
+                    <img src="${recipe.image}" alt="${recipe.name}">
+                    <div class="recipe-info">
+                        <h3>${recipe.name}</h3>
+                        <p class="meal-type">${recipe.mealType}</p>
+                    </div>
+                </div>
+            `;
+        } else {
+            // If not found, just show it (not clickable)
+            return `
                 <div class="recipe-card">
                     <img src="${recipe.image}" alt="${recipe.name}">
                     <div class="recipe-info">
                         <h3>${recipe.name}</h3>
+                        <p class="meal-type">${recipe.mealType}</p>
                     </div>
                 </div>
-            </a>
-        `;
+            `;
+        }
     };
 
     // Function to display recipes with pagination
@@ -75,6 +106,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update the DOM
         recipeContainer.innerHTML = recipesHTML;
+        
+        // Add click event listeners to clickable recipes
+        document.querySelectorAll('.clickable-recipe').forEach(card => {
+            card.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                if (!isNaN(index) && typeof showRecipeDetail === 'function') {
+                    showRecipeDetail(index);
+                }
+            });
+        });
+        
         setupPagination(totalPages);
     };
 
